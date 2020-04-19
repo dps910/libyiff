@@ -2,7 +2,7 @@
  * Copyright (c) 2020.
  */
 
-package main
+package requests
 
 import "testing"
 

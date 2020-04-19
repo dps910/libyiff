@@ -8,7 +8,7 @@
 /   ....don't ask......
 */
 
-package main
+package libyiff
 
 import (
 	"crypto/md5"

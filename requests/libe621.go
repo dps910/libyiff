@@ -17,14 +17,6 @@ import (
 	"net/http"
 )
 
-package main
-
-import (
-"fmt"
-"io/ioutil"
-"net/http"
-)
-
 // GetByHash asks e621 for an image's tags based on md5 hash
 func GetByHash(hash string, username string, key string) {
 	// Request (GET https://e621.net/posts.json?tags=md5:)
