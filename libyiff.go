@@ -20,9 +20,9 @@ import (
 
 // Options struct forms the options for Google Cloud AI and the e621 API key
 type Options struct {
-	GCPToken string
+	GCPToken   string
 	e621APIkey string
-	species []string
+	species    []string
 }
 
 // Identify takes in an instance of Options and a path to a file and returns 'true' if operation to identify
@@ -39,12 +39,14 @@ func md5Hash(filePath string) string {
 	if err != nil {
 		// every day i imagine a future where Go had universal error handlers that didn't require
 		// this snippet after every function; but alas, it is the meme of the language
+		fmt.Println("Error: check if the file path is correct", err)
 		return returnMD5String
 	}
 	defer file.Close()
 
 	hash := md5.New()
 	if _, err := io.Copy(hash, file); err != nil {
+		fmt.Println("Error: Couldn't copy hash from src to dest", err)
 		return returnMD5String
 	}
 
